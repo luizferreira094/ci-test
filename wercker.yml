@@ -20,10 +20,11 @@ build:
     # Read more about steps on our dev center:
     # https://devcenter.wercker.com/development/steps/
   steps:
+    - export tag=1.0.1
     - script:
         name: echo
         code: |
-          export tag="1.0.0"
+          echo "Hello World"
 
 push:
   steps:
