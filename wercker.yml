@@ -2,7 +2,7 @@
 # Docker Hub https://registry.hub.docker.com/_/debian/
 # Read more about containers on our dev center
 # https://devcenter.wercker.com/overview-and-core-concepts/containers/
-box: docker:dind
+box: debian
 # You can also use services such as databases. Read more on our dev center:
 # https://devcenter.wercker.com/administration/services/
 # services:
@@ -32,3 +32,4 @@ push:
       username: _json_key
       password: $GCR_JSON_KEY_FILE
       repository: gcr.io/$GCR_PROJECT_NAME/$WERCKER_GIT_REPOSITORY
+
