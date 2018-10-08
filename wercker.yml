@@ -23,5 +23,12 @@ build:
     - script:
         name: echo
         code: |
-          docker build . -t gcr.io/$CLUSTER_CORE/$WERCKER_GIT_REPOSITORY:latest
-          docker push gcr.io/$CLUSTER_CORE/$WERCKER_GIT_REPOSITORY:latest
+          echo "Hello World !"
+
+push:
+  steps:
+    - internal/docker-push:
+      registry: https://gcr.io
+      username: _json_key
+      password: $GCR_JSON_KEY_FILE
+      repository: gcr.io/$GCR_PROJECT_NAME/$WERCKER_GIT_REPOSITORY
