@@ -23,7 +23,7 @@ build:
     - script:
         name: echo
         code: |
-          echo "Hello World !"
+          export tag="1.0.0"
 
 push:
   steps:
@@ -31,5 +31,6 @@ push:
       registry: https://gcr.io
       username: _json_key
       password: $GCR_JSON_KEY_FILE
+      tag: $tag
       repository: gcr.io/$GCR_PROJECT_NAME/$WERCKER_GIT_REPOSITORY
 
