@@ -23,4 +23,5 @@ build:
     - script:
         name: echo
         code: |
-          env
+          docker build . -t gcr.io/$CLUSTER_CORE/$WERCKER_GIT_REPOSITORY:latest
+          docker push gcr.io/$CLUSTER_CORE/$WERCKER_GIT_REPOSITORY:latest
